@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <style>
+        .div1 {
+            width: 300px;
+            height: 300px;
+            border: 3px solid red;
+        }
+        .divM {
+            
+            height: 300px;
+            display: flex;
+        }
+        .divM1{
+            border: 3px solid green;
+            width: 400px;
+            padding: 10px;
+            margin: 350px;
+        }
+    </style>
+
+    <script>
+        let car = ["nature1.jpg", "nature2.jpg", "nature3.jpg"];
+        let carname = ["Mountains" , "Valleys","Beach"]
+        let c = 0;
+        function handleNext() {
+
+            c = c + 1;
+            if (c >= car.length - 1) {
+                c = 0;
+            }
+            document.getElementById("pic").src = car[c];
+            document.getElementById("name").innerText = carname[c];
+
+        }
+        function handlePre() {
+
+            c = c - 1;
+            if (c < 0) {
+                c = car.length - 1;
+            }
+            document.getElementById("pic").src = carname[c];
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="divM1">
+        <div class="divM">
+            <button onclick="handlePre()">pre</button>
+            <img class="div1" src="nature.jpg" id="pic">
+            <button onclick="handleNext()">next </button>
+        </div>
+        <div id="name" style="background-color:tomato ; border-radius:20px; text-align: center;font-size:30px;"></div>
+    </div>
+    
+
+</body>
+
+</html>

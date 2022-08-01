@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body bgcolor="pink">
+    <input type="text" name="" id="name" placeholder="name"> <br>
+    <input type="number" name="" id="qty" placeholder="qty"><br>
+    <input type="number" name="" id="price" placeholder="price"><br>
+    <input type="button" value="Add" onclick="add()">
+    <h2>Total cost is</h2>
+    <div id="tc">
+        0
+    </div>
+
+    <script>
+        let list = [];
+        let cost = 0;
+        function add() {
+            let name = document.getElementById("name").value;
+            let qty= document.getElementById("qty").value;
+            let pri= document.getElementById("price").value;
+            cost += pri;
+            let onj = {Pname:name,pqty:qty,Ppri:pri};
+            list.push(onj);
+            document.getElementById("tc").innerText="Total cost  "+cost;
+        }
+    </script>
+</body>
+</html>
